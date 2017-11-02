@@ -1,0 +1,27 @@
+<div class="bg_class">
+   <div ng-show="classesStatus" class="classesBlock">
+   <br>    
+   <br>
+    
+    <table border="1" align="center" class='table table-bordered  table-inverse table-hover'>
+        <tr class="table-active">
+            <th>Назва класу</th>
+            <th>Ім'я кл.керівника</th>
+            <th>Прізвище кл.керівника</th>
+            <th>Редагувати</th>
+            <th>Перейти до класу</th>
+            <th>Видалити</th>
+        </tr>
+        <tr ng-repeat="a in classes track by $index">
+            <td>{{a.class}}</td>
+            <td>{{a.name}}</td>
+            <td>{{a.sname}}</td>
+            <td><input type="button" value="Редагувати" ng-click="editClasses(a.id,a.class,a.name,a.sname, a.teach_id)" class='btn btn-primary'></td>
+            <td><input type="button" value="Перейти" ng-click="gotoClasses(a.id, a.class)" class='btn btn-success'></td>
+            <td><input type="button" value="Видалити" ng-click="deleteClasses(a.id)" class='btn btn-danger'></td>
+        </tr>
+    </table>
+    <input type="button" value="Закрити вікно" ng-click="closeClasses()" class='btn btn-danger'><br><br>
+</div>
+<pupils-block class='d'></pupils-block>
+</div>

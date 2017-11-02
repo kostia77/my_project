@@ -1,0 +1,19 @@
+<div ng-show="teachersStatus" class="teachersBlock">
+   <br><br>
+    <table  class='table table-bordered  table-inverse table-hover'>
+        <tr class="table-active">
+            <th class='text-center'>Ім'я</th>
+            <th class='text-center'>Прізвище</th>
+            <th class='text-center'>Редагувати</th>
+            <th class='text-center'>Видалити</th>
+        </tr>
+        <tr ng-repeat="a in teachers track by $index">
+            <td>{{a.name}}</td>
+            <td>{{a.sname}}</td>
+            <td><input type="button" value="Редагувати" ng-click="editTeacher(a.id,a.name,a.sname)" class='btn btn-primary' ></td>
+            <td><input type="button" value="Видалити" ng-click="deleteTeacher(a.id)" class='btn btn-danger'></td>
+        </tr>
+    </table>
+    <input type="button" value="Додати вчителя" ng-click="addTeachers()" class='btn btn-success'>
+    <input type="button" value="Закрити вікно" ng-click="closeTeachers()" class='btn btn-danger'>
+</div>

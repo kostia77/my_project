@@ -1,0 +1,21 @@
+<div ng-show="pupilsStatus" class="classesBlock">
+    <br><br>
+    <h1>{{classPupilsName}}</h1>
+    <table border="1" align="center" class='table table-bordered  table-inverse table-hover'>
+        <tr>
+            <th>Ім'я учня</th>
+            <th>Прізвище учня</th>
+            <th>Редагувати</th>
+            <th>Видалити</th>
+        </tr>
+        <tr ng-repeat="a in pupils track by $index">
+            <td>{{a.name}}</td>
+            <td>{{a.sname}}</td>
+            <td><input type="button" value="Редагувати" ng-click="editPupils()" class='btn btn-primary'></td>
+            <td><input type="button" value="Видалити" ng-click="deletePupils()" class='btn btn-danger'></td>
+        </tr>
+    </table>
+    <br>
+    <input type="button" value="Закрити вікно" ng-click="closePupils()" class="btn btn-danger">
+    <input type="button" value="Повернутись до класів" ng-click="gotoClassesBack()" class="btn btn-primary">
+</div>
